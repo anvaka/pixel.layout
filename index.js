@@ -72,7 +72,18 @@ function createLayout(graph, options) {
     /**
      * Gets force based simulator of the current layout
      */
-    simulator: layout.simulator
+    simulator: layout.simulator,
+
+    /**
+     * Toggle node pinning. If node is pinned the layout algorithm is not allowed
+     * to change its position.
+     *
+     * @param {string} nodeId identifier of a node to work with;
+     * @param {boolean+} isPinned if specified then the `nodeId` pinning attribute
+     * is set to the to the value of this argument; Otherwise this method returns
+     * current pinning mode of the node.
+     */
+    pinNode: pinNode
   };
 
   eventify(api);
@@ -117,6 +128,15 @@ function createLayout(graph, options) {
       layout.setNodePosition(node.id, pos.x, pos.y, pos.z);
       idx += 1;
     }
+  }
+
+  function pinNode(nodeId, isPinned) {
+    var node = graph.getNode(nodeId);
+    if (!node) throw new Error('Could not find node in the graph. Node Id: ' + nodeId);
+    if (isPinned === undefined) {
+      return layout.isNodePinned(node);
+    }
+    layout.pinNode(node, isPinned);
   }
 
   function copyPhysicsSettings(simulator) {
