@@ -1,10 +1,9 @@
 {
   "name": "pixel.layout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "3d/2d graph layout for ngraph.pixel",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "graph",
     "ngraph",
@@ -21,6 +20,5 @@
     "ngraph.events": "0.0.3",
     "ngraph.forcelayout3d": "0.0.12"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
