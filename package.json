@@ -1,6 +1,6 @@
 {
   "name": "pixel.layout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "3d/2d graph layout for ngraph.pixel",
   "main": "index.js",
   "scripts": {},
