@@ -17,7 +17,7 @@ function createLayout(graph, options) {
   options = options || {};
 
   /**
-   * Shuold the graph be rendered in 3d space? True by default
+   * Should the graph be rendered in 3d space? True by default
    */
   options.is3d = options.is3d === undefined ? true : options.is3d;
 
